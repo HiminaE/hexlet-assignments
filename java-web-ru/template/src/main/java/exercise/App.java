@@ -25,7 +25,7 @@ public final class App {
         app.get("/users}", ctx -> {
             var users = USERS;
             var page = new UsersPage(users);
-            ctx.render("users/index.jte", model ("page", page));
+            ctx.render("users/index.jte", model("page", page));
         });
         app.get("/users/{id}", ctx -> {
             var id = ctx.pathParamAsClass("id", Long.class).get();
@@ -37,7 +37,7 @@ public final class App {
                 throw new NotFoundResponse("User not found");
             }
             var page = new UserPage(user);
-            ctx.render("users/show.jte", model ("page", page));
+            ctx.render("users/show.jte", model("page", page));
         });
 
         // END
