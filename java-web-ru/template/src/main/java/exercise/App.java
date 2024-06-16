@@ -22,15 +22,10 @@ public final class App {
         });
 
         // BEGIN
-        app.get("/users}", ctx -> {
-            var users = USERS;
-            var page = new UsersPage(users);
-            ctx.render("users/index.jte", model("page", page));
-        });
         app.get("/users/{id}", ctx -> {
-            var id = ctx.pathParamAsClass("id", Long.class).get();
-            var user = USERS.stream()
-                    .filter(u -> u.getId() == id)
+            var id = ctx.pathParam("id");
+            User user = USERS.stream()
+                    .filter(u -> u.getId() == Long.parseLong(id))
                     .findFirst()
                     .orElse(null);
             if (user == null) {
@@ -40,6 +35,11 @@ public final class App {
             ctx.render("users/show.jte", model("page", page));
         });
 
+        app.get("/users}", ctx -> {
+            var header = "Users";
+            var page = new UsersPage(USERS, header);
+            ctx.render("users/index.jte", model("page", page));
+        });
         // END
 
         app.get("/", ctx -> {
