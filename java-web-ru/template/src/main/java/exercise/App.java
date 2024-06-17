@@ -35,7 +35,7 @@ public final class App {
             ctx.render("users/show.jte", model("page", page));
         });
 
-        app.get("/users}", ctx -> {
+        app.get("/users", ctx -> {
             var header = "Users";
             var page = new UsersPage(USERS, header);
             ctx.render("users/index.jte", model("page", page));
