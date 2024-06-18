@@ -8,12 +8,21 @@ content = @`
     @if(page.getPosts().isEmpty())
         <h1>Пока не добавлено ни одного поста</h1>
     @endif
-
-    <ul>
-        @for(var entity: page.getPosts())
-            <li><a href="/posts/${entity.getId()}">${entity.getName()}</a></li>
+    <table class="table table-striped">
+        @for(var post : page.getPosts())
+            <tr>
+                <td>
+                    ${post.getId()}
+                </td>
+                <td>
+                    <a href="/posts/${post.getId()}">${post.getName()}</a>
+                </td>
+                <td>
+                    ${post.getBody()}
+                </td>
+            </tr>
         @endfor
-    </ul>
+    </table>
 
     <nav class="navbar">
         <div class="menu">
@@ -23,6 +32,4 @@ content = @`
             <a href="/posts?page=${page.getPageNumber() + 1}">Следующа</a>
         </div>
     </nav>
-
-`
-)
+`)
