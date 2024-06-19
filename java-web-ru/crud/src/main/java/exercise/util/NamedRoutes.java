@@ -9,12 +9,11 @@ public class NamedRoutes {
     public static String postsPath() {
         return "/posts";
     }
-    public static String postBuildPath() {
-        return "/posts/build";
-    }
+
     public static String postPath(Long id) {
         return postPath(String.valueOf(id));
     }
+
     public static String postPath(String id) {
         return "/posts/" + id;
     }

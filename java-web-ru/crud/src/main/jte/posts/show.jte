@@ -1,14 +1,16 @@
 @import exercise.dto.posts.PostPage
 @param PostPage page
 
-@template.layout.page (
+@template.layout.page(
 content = @`
-    <h1>
-        ${page.getPost().getName()}
-    </h1>
+    <main>
+        <div class="mx-auto p-4 py-md-5">
+            <h1>${page.getPost().getName()}</h1>
+        </div>
 
-    <h3>
-        ${page.getPost().getBody()}
-    </h3>
+        <div class="mx-auto p-4 py-md-5">
+            ${page.getPost().getBody()}
+        </div>
+    </main>
 `
 )

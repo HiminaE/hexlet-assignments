@@ -37,15 +37,15 @@ public class PostRepository {
                 .anyMatch(value -> value.getName().equals(name));
     }
 
-    public static List<Post> getEntities() {
-        return entities;
-    }
-
     public static List<Post> findAll(int pageNumber, int pageSize) {
         var begin = (pageNumber - 1) * pageSize;
         var end = begin + pageSize;
 
         return entities.stream().skip(begin).limit(end - begin).toList();
+    }
+
+    public static List<Post> getEntities() {
+        return entities;
     }
 
     public static void clear() {

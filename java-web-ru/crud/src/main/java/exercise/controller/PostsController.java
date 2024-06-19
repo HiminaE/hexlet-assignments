@@ -1,12 +1,17 @@
 package exercise.controller;
 
 import static io.javalin.rendering.template.TemplateUtil.model;
+
 import exercise.dto.posts.PostsPage;
 import exercise.dto.posts.PostPage;
 import io.javalin.http.NotFoundResponse;
-// import exercise.model.Post;
+//import exercise.model.Post;
 import exercise.repository.PostRepository;
 import io.javalin.http.Context;
+//import io.javalin.http.NotFoundResponse;
+//import java.util.Collections;
+//import java.util.List;
+//import java.util.ArrayList;
 
 public class PostsController {
     //BEGIN
@@ -28,5 +33,6 @@ public class PostsController {
         var page = new PostPage(post);
         ctx.render("posts/show.jte", model("page", page));
     }
+
     //END
 }
