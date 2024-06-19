@@ -14,5 +14,4 @@ public class PostsPage {
     private List<Post> posts;
     private int page;
 }
-
 // END
