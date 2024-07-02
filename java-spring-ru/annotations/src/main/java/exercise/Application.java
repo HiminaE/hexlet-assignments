@@ -14,11 +14,11 @@ public class Application {
 
             // Проверяем, есть ли у метода аннотация @Inspect
             if (method.isAnnotationPresent(Inspect.class)) {
-
                 var name = method.getName();
                 var typeName = method.getReturnType().getSimpleName();
+
                 //Если есть, то выводим на печать название и тип
-                System.out.println("Method " + name + " return a value of type " + typeName);
+                System.out.println("Method " + name + " returns a value of type " + typeName);
             }
         }
         // END
