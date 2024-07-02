@@ -10,7 +10,7 @@ public class Application {
 
         // BEGIN
         // Итерируем все методы класса
-        for (Method method : Address.class.getDeclaredMethods()) {
+        for (Method method : address.getClass().getDeclaredMethods()) {
 
             // Проверяем, есть ли у метода аннотация @Inspect
             if (method.isAnnotationPresent(Inspect.class)) {
